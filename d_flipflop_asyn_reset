@@ -1,0 +1,25 @@
+//100 Days of RTL//
+
+//Abilash P//
+
+//D flipflop with Asynchronous reset//
+
+module d_flipflop (CLK, RST, D, Q, Qbar);
+  
+  input  CLK, RST, D;
+  output reg Q, Qbar;
+  
+  always @ (posedge CLK or negedge RST)
+    begin
+      if(!RST)
+        begin
+          Q = D;
+        end
+      else
+        begin
+          Q = 0;
+        end
+    end
+  
+  assign  Qbar = ~Q;
+endmodule
